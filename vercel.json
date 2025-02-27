@@ -2,9 +2,7 @@
   "build": {
     "env": {
       "NODE_VERSION": "10"
-    },
-    "command": "gitbook build",
-    "output": "_book"
+    }
   },
   "routes": [
     {
