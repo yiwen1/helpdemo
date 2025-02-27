@@ -2,7 +2,8 @@
   "build": {
     "env": {
       "NODE_VERSION": "10"
-    }
+    },
+    "command": "npm install -g n && n 10 && npm install -g gitbook-cli && gitbook install && gitbook build"
   },
   "routes": [
     {
