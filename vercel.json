@@ -1,8 +1,10 @@
 {
   "build": {
     "env": {
-      "NODE_VERSION": "10" // 根据你的需求调整 Node.js 版本
-    }
+      "NODE_VERSION": "10"
+    },
+    "command": "gitbook build",
+    "output": "_book"
   },
   "routes": [
     {
