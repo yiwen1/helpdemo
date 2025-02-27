@@ -1,0 +1,36 @@
+name: Deploy GitBook to GitHub Pages
+on:
+  push:
+    branches: [main]  # 触发分支（根据实际情况修改）
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 安装 Node.js（GitBook 依赖环境）
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10'  # GitBook 兼容的 Node.js 版本
+
+      # 3. 安装 GitBook CLI
+      - name: Install GitBook
+        run: |
+          npm install -g gitbook-cli
+          gitbook install  # 安装 GitBook 默认依赖
+
+      # 4. 构建 GitBook 生成静态文件
+      - name: Build GitBook
+        run: gitbook build
+
+      # 5. 部署到 gh-pages 分支
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_book  # GitBook 默认输出目录
+          publish_branch: gh-pages  # 发布分支
