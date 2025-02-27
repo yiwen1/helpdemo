@@ -1,5 +1,11 @@
 {
   "scripts": {
     "build": "gitbook install && gitbook build"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  },
+  "engines": {
+    "node": "10"
   }
 }
