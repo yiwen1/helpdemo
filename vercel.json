@@ -1,12 +1,13 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
+  "build": {
+    "env": {
+      "NODE_VERSION": "10" // 根据你的需求调整 Node.js 版本
     }
-  ],
+  },
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/$1" }
+    {
+      "src": "/(.*)",
+      "dest": "/_book/$1"
+    }
   ]
 }
