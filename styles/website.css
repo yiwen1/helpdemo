@@ -34,3 +34,9 @@
 .page-toc a:hover {
     color: #0078d7;
 }
+.page-toc .title {
+    display: none; /* 隐藏默认标题 */
+}
+.page-toc::before {
+    content: "目录"; /* 替换为新标题 */
+}

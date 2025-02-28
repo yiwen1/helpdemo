@@ -1,5 +1,6 @@
 module.exports = {
-    plugins: ["hide-element","-sharing","search-pro","copy-code-button","page-toc"],
+    title: "帮助文档",
+    plugins: ["hide-element","-sharing","search-pro","code","page-toc"],
     pluginsConfig: {
         "hide-element": {
             "elements": [".gitbook-link", ".navigation-prev", ".navigation-next"]
